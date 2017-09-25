@@ -198,6 +198,9 @@ public class VideoUtil {
 			test.append(commend.get(i) + " ");
 		System.out.println(test);
 		try {
+			
+			
+			
 			ProcessBuilder builder = new ProcessBuilder();
 			builder.command(commend);
 			Process p = builder.start();
