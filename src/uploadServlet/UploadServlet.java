@@ -32,6 +32,7 @@ public class UploadServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		VedioBean vb = new VedioBean();
+		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		String savepath = this.getServletContext().getRealPath("/WEB-INF/upload");
 		String savepath1 = this.getServletContext().getRealPath("/images");
@@ -74,12 +75,13 @@ public class UploadServlet extends HttpServlet {
 						vb.setVedio_msg(item.getString());
 					}
 					// String name = item.getFieldName();
-					// String value = item.getString("utf-8");
+				 String value = item.getString("utf-8");
 
 				} else {
 					if (item.getFieldName().equals("sk1")) {
 
 						String filename = item.getName();// 得到的是文件的绝对路径
+						System.out.println(filename);
 						if (filename == null || filename.trim().equals("")) {
 							continue;
 						}

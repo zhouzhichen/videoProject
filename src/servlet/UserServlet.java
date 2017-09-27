@@ -34,6 +34,7 @@ public class UserServlet extends HttpServlet {
 				List li2=UserDao.selectTecher();
 				request.setAttribute("majorInfo", li1);
 				request.setAttribute("userInfo", li2);
+				request.getSession().setAttribute("user", user);
 				request.getSession().setAttribute("shit", user.getId());
 				request.getSession().setAttribute("fuck", user.getTypeId());
 				request.getRequestDispatcher("home.jsp").forward(request, response);
